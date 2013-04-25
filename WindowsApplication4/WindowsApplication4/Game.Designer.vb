@@ -22,12 +22,12 @@ Partial Class Game
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.pnlSpeelveld = New System.Windows.Forms.Panel
-        Me.lblScoreInfo = New System.Windows.Forms.Label
-        Me.lblScore = New System.Windows.Forms.Label
-        Me.lblLevenInfo = New System.Windows.Forms.Label
-        Me.lblLeven = New System.Windows.Forms.Label
-        Me.lblLevenFlits = New System.Windows.Forms.Label
+        Me.pnlSpeelveld = New System.Windows.Forms.Panel()
+        Me.lblScoreInfo = New System.Windows.Forms.Label()
+        Me.lblScore = New System.Windows.Forms.Label()
+        Me.lblLevenInfo = New System.Windows.Forms.Label()
+        Me.lblLeven = New System.Windows.Forms.Label()
+        Me.lblLevenFlits = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'pnlSpeelveld

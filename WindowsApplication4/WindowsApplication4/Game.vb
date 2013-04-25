@@ -5,6 +5,8 @@ Imports System.IO.Ports
 Public Class Game
     Dim wm As New Wiimote
 
+    Property naam As String
+
     Dim xPosBol As Single = 0 ' o.w.v. COG van Balance Board is midden van scherm X=0
     Dim yIndexBol As Single = 0
 
@@ -21,8 +23,8 @@ Public Class Game
     Dim WithEvents tmrScore As New Timer
     Dim spelduur As Integer = 0
 
-    Dim score As Integer
-    Dim levens As Integer = 3
+    Property score As Integer
+    Dim levens As Integer = 100
 
     Sub InitWiiStuff()
         ' create a new instance of the Wiimote
@@ -67,7 +69,7 @@ Public Class Game
         InitFormsStuff()
 
         lineFragmentLength = 10
-
+        lblLeven.Text = levens.ToString
 
         pixelArraySize = (pnlSpeelveld.Height / lineFragmentLength)
 
@@ -90,7 +92,11 @@ Public Class Game
 
         UpdatePixels()
         DetectCollisions()
-
+        CheckLeven()
+        If levens <= 0 Then
+            MessageBox.Show("Game Over")
+            GameOver()
+        End If
         If score > 0 And score Mod 1000 = 0 Then
             straatBreedte = straatBreedte * 0.9
         End If
@@ -113,6 +119,18 @@ Public Class Game
         '    lblLeven.Text = levens
         'End If
 
+    End Sub
+
+    Sub GameOver()
+        naam = InputBox("Je behaalde " & score & " punten!. Proficiat." & vbCrLf & vbCrLf & "Geef je naam in aub:", "Game Over!")
+        frmScore.Show()
+    End Sub
+
+    Sub CheckLeven()
+        If levens <= 0 Then
+            tmrMain.Stop()
+            tmrScore.Stop()
+        End If
     End Sub
 
     Private Sub tmrScore_tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tmrScore.Tick
@@ -250,4 +268,9 @@ Public Class Game
         End If
     End Sub
 
+    Private Sub pnlSpeelveld_MouseMove(sender As System.Object, e As System.Windows.Forms.MouseEventArgs) Handles pnlSpeelveld.MouseMove
+
+        xPosBol = MousePosition.X - 400
+
+    End Sub
 End Class

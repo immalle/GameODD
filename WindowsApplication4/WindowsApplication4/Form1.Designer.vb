@@ -26,6 +26,7 @@ Partial Class frmScore
         Me.lblScore = New System.Windows.Forms.Label()
         Me.btnVoegToe = New System.Windows.Forms.Button()
         Me.rtxtScore = New System.Windows.Forms.RichTextBox()
+        Me.btnNew = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lblNaam
@@ -64,11 +65,22 @@ Partial Class frmScore
         Me.rtxtScore.TabIndex = 4
         Me.rtxtScore.Text = ""
         '
+        'btnNew
+        '
+        Me.btnNew.Location = New System.Drawing.Point(400, 9)
+        Me.btnNew.Name = "btnNew"
+        Me.btnNew.Size = New System.Drawing.Size(75, 23)
+        Me.btnNew.TabIndex = 5
+        Me.btnNew.Text = "Nieuw Spel"
+        Me.btnNew.UseVisualStyleBackColor = True
+        Me.btnNew.Visible = False
+        '
         'frmScore
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(948, 639)
+        Me.Controls.Add(Me.btnNew)
         Me.Controls.Add(Me.rtxtScore)
         Me.Controls.Add(Me.btnVoegToe)
         Me.Controls.Add(Me.lblScore)
@@ -84,5 +96,6 @@ Partial Class frmScore
     Friend WithEvents lblScore As System.Windows.Forms.Label
     Friend WithEvents btnVoegToe As System.Windows.Forms.Button
     Friend WithEvents rtxtScore As System.Windows.Forms.RichTextBox
+    Friend WithEvents btnNew As System.Windows.Forms.Button
 
 End Class

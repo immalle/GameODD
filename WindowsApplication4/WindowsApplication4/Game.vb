@@ -65,6 +65,7 @@ Public Class Game
 
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        MainForm.Hide()
         'InitWiiStuff()
         InitFormsStuff()
 
@@ -272,5 +273,9 @@ Public Class Game
 
         xPosBol = MousePosition.X - 400
 
+    End Sub
+
+    Private Sub Game_FormClosing(sender As System.Object, e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
+        MainForm.Show()
     End Sub
 End Class

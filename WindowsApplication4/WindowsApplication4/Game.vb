@@ -31,6 +31,8 @@ Public Class frmGame
         Dim wm As Wiimote = New Wiimote()
         Dim wm2 As New Wiimote
 
+
+
         ' setup the event to handle state changes
         AddHandler wm.WiimoteChanged, AddressOf wm_OnWiimoteChanged
 
@@ -99,8 +101,8 @@ Public Class frmGame
             MessageBox.Show("Game Over")
             GameOver()
         End If
-        If score > 0 And score Mod 500 = 0 Then
-            straatBreedte = straatBreedte * 0.9
+        If score > 0 And score Mod 20 = 0 Then
+            straatBreedte -= 1
         End If
         lblScore.Text = score.ToString()
 

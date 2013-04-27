@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Game
+Partial Class frmGame
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -27,7 +27,7 @@ Partial Class Game
         Me.lblScore = New System.Windows.Forms.Label()
         Me.lblLevenInfo = New System.Windows.Forms.Label()
         Me.lblLeven = New System.Windows.Forms.Label()
-        Me.lblLevenFlits = New System.Windows.Forms.Label()
+        Me.lblProcent = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'pnlSpeelveld
@@ -62,9 +62,9 @@ Partial Class Game
         Me.lblLevenInfo.AutoSize = True
         Me.lblLevenInfo.Location = New System.Drawing.Point(772, 193)
         Me.lblLevenInfo.Name = "lblLevenInfo"
-        Me.lblLevenInfo.Size = New System.Drawing.Size(45, 13)
+        Me.lblLevenInfo.Size = New System.Drawing.Size(40, 13)
         Me.lblLevenInfo.TabIndex = 3
-        Me.lblLevenInfo.Text = "Levens:"
+        Me.lblLevenInfo.Text = "Leven:"
         '
         'lblLeven
         '
@@ -75,28 +75,28 @@ Partial Class Game
         Me.lblLeven.Size = New System.Drawing.Size(0, 32)
         Me.lblLeven.TabIndex = 4
         '
-        'lblLevenFlits
+        'lblProcent
         '
-        Me.lblLevenFlits.AutoSize = True
-        Me.lblLevenFlits.Location = New System.Drawing.Point(767, 315)
-        Me.lblLevenFlits.Name = "lblLevenFlits"
-        Me.lblLevenFlits.Size = New System.Drawing.Size(39, 13)
-        Me.lblLevenFlits.TabIndex = 5
-        Me.lblLevenFlits.Text = "Label1"
+        Me.lblProcent.AutoSize = True
+        Me.lblProcent.Location = New System.Drawing.Point(767, 315)
+        Me.lblProcent.Name = "lblProcent"
+        Me.lblProcent.Size = New System.Drawing.Size(15, 13)
+        Me.lblProcent.TabIndex = 5
+        Me.lblProcent.Text = "%"
         '
-        'Game
+        'frmGame
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(930, 486)
-        Me.Controls.Add(Me.lblLevenFlits)
+        Me.Controls.Add(Me.lblProcent)
         Me.Controls.Add(Me.lblLeven)
         Me.Controls.Add(Me.lblLevenInfo)
         Me.Controls.Add(Me.lblScore)
         Me.Controls.Add(Me.lblScoreInfo)
         Me.Controls.Add(Me.pnlSpeelveld)
-        Me.Name = "Game"
-        Me.Text = "Form1"
+        Me.Name = "frmGame"
+        Me.Text = "Game"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -106,6 +106,6 @@ Partial Class Game
     Friend WithEvents lblScore As System.Windows.Forms.Label
     Friend WithEvents lblLevenInfo As System.Windows.Forms.Label
     Friend WithEvents lblLeven As System.Windows.Forms.Label
-    Friend WithEvents lblLevenFlits As System.Windows.Forms.Label
+    Friend WithEvents lblProcent As System.Windows.Forms.Label
 
 End Class

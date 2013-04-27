@@ -2,7 +2,7 @@
 Imports System.IO.Ports
 
 
-Public Class Game
+Public Class frmGame
     Dim wm As New Wiimote
 
     Property naam As String
@@ -55,22 +55,23 @@ Public Class Game
 
         lblScoreInfo.Location = New System.Drawing.Point(1300, 20)
         lblScore.Location = New System.Drawing.Point(1300, 40)
-        lblLevenInfo.Location = New System.Drawing.Point(1300, 60)
-        lblLeven.Location = New System.Drawing.Point(1300, 80)
+        lblLevenInfo.Location = New System.Drawing.Point(1300, 100)
+        lblLeven.Location = New System.Drawing.Point(1300, 120)
+
 
         ' TODO
-        lblLevenFlits.Visible = False
-        lblLevenFlits.Location = New System.Drawing.Point(200, 735)
+        lblProcent.Visible = False
+        lblProcent.Location = New System.Drawing.Point(200, 735)
     End Sub
 
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         MainForm.Hide()
-        'InitWiiStuff()
+        InitWiiStuff()
         InitFormsStuff()
 
         lineFragmentLength = 10
-        lblLeven.Text = levens.ToString
+        lblLeven.Text = levens.ToString & " %"
 
         pixelArraySize = (pnlSpeelveld.Height / lineFragmentLength)
 
@@ -98,7 +99,7 @@ Public Class Game
             MessageBox.Show("Game Over")
             GameOver()
         End If
-        If score > 0 And score Mod 1000 = 0 Then
+        If score > 0 And score Mod 500 = 0 Then
             straatBreedte = straatBreedte * 0.9
         End If
         lblScore.Text = score.ToString()
@@ -109,7 +110,7 @@ Public Class Game
 
         'Beperking invoegen zodat straatbreedte niet negatief kan worden
         ' om de 1000 punten wordt straatbreedte 10% kleiner
-        
+
         ' TODO lblLevenFlits
         'If lblScore.Text Mod 100 = 0 Then
         '    lblLevenFlits.Text = "U heeft nog " & levens.ToString & " levens over!"
@@ -211,6 +212,8 @@ Public Class Game
             End If
         End If
 
+
+
         pixels.RemoveAt(pixels.Count - 1)
         pixels.Insert(0, nieuwe)
     End Sub
@@ -227,7 +230,7 @@ Public Class Game
         Else
             ' collision
             levens -= 1
-            lblLeven.Text = levens.ToString
+            lblLeven.Text = levens.ToString & " %"
             'If levens = 0 Then
             '    Me.Close()
             'End If
@@ -269,11 +272,11 @@ Public Class Game
         End If
     End Sub
 
-    Private Sub pnlSpeelveld_MouseMove(sender As System.Object, e As System.Windows.Forms.MouseEventArgs) Handles pnlSpeelveld.MouseMove
+    'Private Sub pnlSpeelveld_MouseMove(sender As System.Object, e As System.Windows.Forms.MouseEventArgs) Handles pnlSpeelveld.MouseMove
 
-        xPosBol = MousePosition.X - 400
+    '    xPosBol = MousePosition.X - 400
 
-    End Sub
+    'End Sub
 
     Private Sub Game_FormClosing(sender As System.Object, e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         MainForm.Show()

@@ -59,24 +59,5 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to Testscore
-        '''.
-        '''</summary>
-        Friend ReadOnly Property Highscore_txt() As String
-            Get
-                Return ResourceManager.GetString("Highscore_txt", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to .
-        '''</summary>
-        Friend ReadOnly Property Score() As String
-            Get
-                Return ResourceManager.GetString("Score", resourceCulture)
-            End Get
-        End Property
     End Module
 End Namespace
